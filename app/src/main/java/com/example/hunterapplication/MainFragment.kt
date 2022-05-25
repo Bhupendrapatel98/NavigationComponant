@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 
 class MainFragment : Fragment() {
 
@@ -29,20 +28,19 @@ class MainFragment : Fragment() {
         viewBalance = view.findViewById(R.id.viewBalance)
 
         transcation.setOnClickListener{
+            //navigate to other transaction fragment
             Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_transacationFragment)
         }
 
         receipent.setOnClickListener{
+            //navigate to other recipient fragment
             Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_recipientFragment)
         }
 
-
         viewBalance.setOnClickListener{
+            //navigate to other viewBalance fragment
             Navigation.findNavController(view).navigate(R.id.action_mainFragment_to_viewBalanceFragment)
         }
-
         return  view
     }
-
-
 }

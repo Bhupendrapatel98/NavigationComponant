@@ -17,8 +17,7 @@ class SpecifyAmountFragment : Fragment() {
         val view:View =  inflater.inflate(R.layout.fragment_specify_amount, container, false)
 
         SpecifyAmountFragmentArgs.fromBundle(arguments!!).name
-
-        Log.d("difydr8", "onCreateView: "+SpecifyAmountFragmentArgs.fromBundle(arguments!!).name)
+        Log.d("Receive Data", "onCreateView: "+SpecifyAmountFragmentArgs.fromBundle(arguments!!).name)
 
         return view;
     }

@@ -30,6 +30,7 @@ class RecipientFragment : Fragment() {
         name = view.findViewById(R.id.name)
 
         send.setOnClickListener{
+            //navigate to other fragment with data
             var navDirections:NavDirections = RecipientFragmentDirections.actionRecipientFragmentToSpecifyAmountFragment(name.text.toString())
             Navigation.findNavController(view).navigate(navDirections)
         }
