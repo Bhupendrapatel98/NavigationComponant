@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hunterapplication.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_mainFragment_to_transacationFragment"
+            app:destination="@id/transacationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_recipientFragment"
+            app:destination="@id/recipientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transacationFragment"
+        android:name="com.example.hunterapplication.TransacationFragment"
+        android:label="Transacation"
+        tools:layout="@layout/fragment_transacation" />
+    <fragment
+        android:id="@+id/recipientFragment"
+        android:name="com.example.hunterapplication.RecipientFragment"
+        android:label="Recipient"
+        tools:layout="@layout/fragment_recipient" >
+        <action
+            app:popUpTo="@id/recipientFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_recipientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="com.example.hunterapplication.ViewBalanceFragment"
+        android:label="View Balance"
+        tools:layout="@layout/fragment_view_balance" />
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="com.example.hunterapplication.SpecifyAmountFragment"
+        android:label="Specify Amount"
+        tools:layout="@layout/fragment_specify_amount" >
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.hunterapplication.ConfirmationFragment"
+        android:label="Confirmation"
+        tools:layout="@layout/fragment_confirmation" />
+</navigation>
